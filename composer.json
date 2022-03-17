@@ -1,0 +1,6 @@
+{
+    "require": {
+        "php-mqtt/client": "^1.1",
+        "endclothing/prometheus_client_php": "^1.0"
+    }
+}
