@@ -71,9 +71,9 @@ $mqtt->subscribe('moss/511987/currentBrightness', function ($topic, $message) {
     global $registry;
 
     if(dateChecker(intval(date("G"))))
-        $desiredBrightness = 350;
+        $desiredBrightness = intval(file_get_contents("https://moss.nightfish.co/getBrightnessMQTT.php"));
     else
-        $desiredBrightness = stringToNumber(file_get_contents("https://moss.nightfish.co/getBrightnessMQTT.php"));
+        $desiredBrightness = 0;
 
     $currentBrightness = stringToNumber($message);
     if($currentBrightness !== $desiredBrightness){
